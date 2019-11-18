@@ -8,8 +8,8 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-
-    message = 'News Highlight'
+    
+    title = 'Home - Welcome to The best News Highlight  Website Online'
     return render_template('index.html',message = message)
 #dynamc routes
 @app.route('/news/<int:news_id>')
