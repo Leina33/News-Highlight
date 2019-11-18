@@ -2,15 +2,23 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to the best News Highlight  Review website </title>
-        {% endif %}
-    </head>
-    <body>
-
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Welcome to the best News Highlight Review website</title>
+    {% endif %}
+  </head>
+  <body>
+    <!-- technology section  -->
+    <h3>Technology News</h3>
+    <ul>
+      {% for technology_news in technology %}
+      <h3>{{ technology_news.name }}</h3>
+      <p>{{ technology_news.description }}</p>
+      <p>Source: {{ technology_news.id }}</p>
+      {% endfor %}
+    </ul>
+  </body>
 </html>
