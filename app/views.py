@@ -10,7 +10,7 @@ def index():
     '''
     
     title = 'Home - Welcome to The best News Highlight  Website Online'
-    return render_template('index.html',message = message)
+    return render_template('index.html',title = title)
 #dynamc routes
 @app.route('/news/<int:news_id>')
 def news(news_id):
