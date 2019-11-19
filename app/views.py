@@ -1,6 +1,8 @@
 from flask import render_template
 from app import app
 from .request import get_news
+from .request import get_news,get_news
+
 
 # Views
 @app.route('/')
@@ -16,8 +18,8 @@ def index():
     return render_template('index.html', title = title, technology = technology_news)
 
 #dynamc routes
-@app.route('/news/<int:id>')
-def news(id):
+@app.route('/articles/<id>')
+def articles(id):
 
     '''
     View news  page function that returns the news details page and its data

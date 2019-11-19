@@ -1,3 +1,4 @@
+{% import 'macros.html' as macro%}
 <h1> {{ message }} </h1>
 {% extends 'base.html'%}
 
@@ -20,6 +21,19 @@
       <h3>{{ technology_news.name }}</h3>
       <p>{{ technology_news.description }}</p>
       <p>Source: {{ technology_news.id }}</p>
+      <div class="container-fluid" style="background-color: goldenrod">
+        <div class="container">
+          <div class="card" style="background-color:aliceblue;margin-top: 2%;">
+            <div class="card-body" style="padding:3%;">
+              <h2 style="font-weight: bolder">{{source.name|upper}}</h2>
+              <p>{{source.description}}</p>
+              <a href="/articles/{{source.id}}" class="btn btn-success" style="font-weight: bold;font-size: 23px;">view articles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
       {% endfor %}
       {% endblock%}
     </ul>

@@ -52,3 +52,35 @@ def process_results(news_list):
             news_results.append(news_object)
         
     return news_results
+
+
+#views function
+
+def get_articles(source_id):
+  url = f'https://newsapi.org/v2/everything?sources={source_id}&apiKey={api_key}'
+  url_datas = requests.get(url)
+  article_dict = url_datas.json()
+  articles_list = article_dict.get('articles')
+  return process_articles(articles_list)
+
+# #FUNCTION TO GET MOVIES
+# def get_news(id):
+#     # get_news_url = base_url.format(id,api_key)
+#     get_news_details_url = base_url.format(id,api_key)
+#     with urllib.request.urlopen(get_news_details_url) as url:
+#         news_details_data = url.read()
+#         news_details_response = json.loads(news_details_data)
+        
+#         news_object = None
+#         if news_details_response:
+#             id = news_item.get('id')
+#             name = news_item.get('name')
+#             description= news_item.get('description')
+#             url = news_item.get('url')
+            
+            
+#             news_object = News(id,name,description,url)
+            
+#     return news_object
+            
+            
