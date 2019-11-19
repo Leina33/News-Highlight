@@ -1,41 +1,26 @@
+{% extends "base.html"%}
 {% import 'macros.html' as macro%}
-<h1> {{ message }} </h1>
-{% extends 'base.html'%}
-
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" /> -->
-    {% block content %}
-    {% if title %}
-    <title>{{ title }}</title>
-    {% else %}
-    <title>Welcome to the best News Highlight Review website</title>
-    {% endif %}
-  </head>
-  <body>
-    <!-- technology section  -->
+<!-- Styles block -->
+{% block styles%}
+{{ super() }}
+<link href="https://fonts.googleapis.com/css?family=Playball&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+{%block content%}
+<div class="container-fluid body">
+  <div class="row">
+    <h3>Sports News </h3>
+    <div class="card">
+      {{ macro.displaySourcesList(sports_sources )}}
+    </div>
+    <h3>Health News </h3>
+    <div class="card">
+      {{ macro.displaySourcesList(health_sources)}}
+    </div>
     <h3>Technology News</h3>
-    <ul>
-      {% for technology_news in technology %}
-      <h3>{{ technology_news.name }}</h3>
-      <p>{{ technology_news.description }}</p>
-      <p>Source: {{ technology_news.id }}</p>
-      <div class="container-fluid" style="background-color: goldenrod">
-        <div class="container">
-          <div class="card" style="background-color:aliceblue;margin-top: 2%;">
-            <div class="card-body" style="padding:3%;">
-              <h2 style="font-weight: bolder">{{source.name|upper}}</h2>
-              <p>{{source.description}}</p>
-              <a href="/articles/{{source.id}}" class="btn btn-success" style="font-weight: bold;font-size: 23px;">view articles</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-
-      {% endfor %}
-      {% endblock%}
-    </ul>
-  <!-- </body>
-</html> -->
+    <div class="card">
+      {{ macro.displaySourcesList(technology_sources)}}
+    </div>
+  </div>
+</div>
+{% endblock%}
