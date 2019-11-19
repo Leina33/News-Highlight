@@ -2,7 +2,7 @@
 An application that will help users to list and preview news articles from various sources.
 ## Built By [Dominic Rutto](https://github.com/Leina33/News-Highlight.git/)
 ## Description
-News is a web application that displays a list of various news sources like BBC and ABC. On choosing a news source, it will preview the top news articles of the day. Clicking a news article will redirect the user to read it fully from the news source. It achieves this by using the [News API](https://newsapi.org/).
+News is a web application that displays a list of various news sources like BBC and ABC. On choosing a news source, it will preview the top news articles of the day. Clicking a news article will redirect the user to read it fully from the news source. It achieves this by using the [News API](https://newsapi.org/)
 You can view the site at: https://Leinanews.herokuapp.com
 ## User Stories
 These are the behaviours/features that the application implements for use by a user.
@@ -25,6 +25,7 @@ As a user I would like to:
 * python3.6
 * pip
 * virtualenv
+* flask
 ### Cloning
 * In your terminal:
     $ git clone https://github.com/Leina33/News-Highlight.git
